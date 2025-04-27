@@ -10,22 +10,22 @@ export default function UsedFeatures() {
                     <h3 className="text-lg font-bold mb-4">목차</h3>
                     <ul className="space-y-2">
                         <li>
-                            <ScrollLink to="tech" smooth={true} duration={500} className="cursor-pointer hover:text-blue-600">
+                            <ScrollLink to="tech" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
                                 기술 스택
                             </ScrollLink>
                         </li>
                         <li>
-                            <ScrollLink to="goal" smooth={true} duration={500} className="cursor-pointer hover:text-blue-600">
+                            <ScrollLink to="goal" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
                                 프로젝트 목표
                             </ScrollLink>
                         </li>
                         <li>
-                            <ScrollLink to="features" smooth={true} duration={500} className="cursor-pointer hover:text-blue-600">
+                            <ScrollLink to="features" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
                                 MetaGen 특화 기능
                             </ScrollLink>
                         </li>
                         <li>
-                            <ScrollLink to="future" smooth={true} duration={500} className="cursor-pointer hover:text-blue-600">
+                            <ScrollLink to="future" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
                                 도입 검토 중
                             </ScrollLink>
                         </li>
