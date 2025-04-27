@@ -1,0 +1,13 @@
+{
+  "about": [
+    { "label": "팀 소개", "path": "/about/team" },
+    { "label": "예제 페이지", "path": "/about/view" }
+  ],
+  "features": [
+    { "label": "사용중인 기능", "path": "/features/used-features" },
+    { "label": "시스템 아키텍처", "path": "/features/system-architecture" }
+  ],
+  "contact": [
+    { "label": "이메일 문의", "path": "/contact/email" }
+  ]
+}

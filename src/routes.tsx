@@ -1,9 +1,11 @@
 import {createBrowserRouter, Outlet} from 'react-router-dom';
 import Header from "./layout/Header.tsx";
-import Main from "./pages/Main.tsx";
-import About from "./pages/About.tsx";
-import Features from "./pages/Features.tsx";
-import Contact from "./pages/Contact.tsx";
+import Main from "./main/Main.tsx";
+import UsedFeatures from "./features/UsedFeatures.tsx";
+import Team from "./about/Team.tsx";
+import View from "./about/View.tsx";
+import SystemArchitecture from "./features/SystemArchitecture.tsx";
+import Email from "./assets/Email.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -11,14 +13,36 @@ export const router = createBrowserRouter([
         element: (
             <>
                 <Header />
-                <Outlet />
+                <div className={"pt-[64px]"}>
+                    <Outlet />
+                </div>
             </>
         ),
         children: [
-            { index: true, element: <Main/>},
-            { path: "about", element: <About/>},
-            { path: "features", element: <Features/>},
-            { path: "contact", element: <Contact/>}
+            {
+                index: true,
+                element: <Main/>
+            },
+            {
+                path: "about",
+                children: [
+                    { path:"team", element: <Team/>},
+                    { path:"view", element: <View/>},
+                ]
+            },
+            {
+                path: "features",
+                children: [
+                    { path:"used-features", element: <UsedFeatures/>},
+                    { path:"system-architecture", element: <SystemArchitecture/>},
+                ]
+            },
+            {
+                path: "contact",
+                children: [
+                    { path:"email", element: <Email/>}
+                ]
+            }
         ]
     },
 ]);

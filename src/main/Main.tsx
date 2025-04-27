@@ -29,7 +29,7 @@ export default function Main(){
             <hr className="my-8 border-gray-300"/>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                이 프로젝트는 <a href="LICENSE"
+                이 프로젝트는 <a href="https://github.com/meta-gen/metagen/blob/main/LICENSE"
                            className="text-blue-600 hover:text-blue-800 font-semibold underline underline-offset-4"
                            target="_blank">MIT 라이선스</a>를 따릅니다.<br/>
                 자유롭게 수정 및 배포할 수 있으나, 저작권 및 라이선스 명시는 필요합니다.
