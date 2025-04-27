@@ -7,6 +7,11 @@ type SubMenuProps = {
     onClickSubMenu: () => void;
 };
 
+type SubMenuItem = {
+    label: string;
+    path: string;
+};
+
 export default function SubMenu({ openMenu, onClickSubMenu }: SubMenuProps) {
     const location = useLocation();
 
@@ -18,7 +23,7 @@ export default function SubMenu({ openMenu, onClickSubMenu }: SubMenuProps) {
     return (
         <div className="bg-white border-t border-b border-gray-200 w-full">
             <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 py-3">
-                {openMenu && subMenuItems[openMenu as keyof typeof subMenuItems]?.map((item) => (
+                {openMenu && (subMenuItems[openMenu as keyof typeof subMenuItems] as SubMenuItem[])?.map((item) => (
                     <Link
                         key={item.path}
                         to={item.path}
