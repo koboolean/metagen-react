@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import subMenuItems from '../data/subMenuItems.json'; // JSON import
-// (위치는 프로젝트 구조에 맞게 조정)
+import {subMenuItems} from "../data/SubMenuItems";
 
 type SubMenuProps = {
     openMenu: string;
