@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import FeatureCarousel from "./FeatureCarousel.tsx";
 
 export default function Main() {
     return (
@@ -48,6 +49,12 @@ export default function Main() {
                     🌟 GitHub
                 </a>
             </div>
+
+            {/* 구분선 */}
+            <hr className="my-12 border-gray-300" />
+
+            {/* 주요 기능 소개 카드 영역 */}
+            <FeatureCarousel />
 
             {/* 구분선 */}
             <hr className="my-12 border-gray-300" />
