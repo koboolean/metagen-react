@@ -24,8 +24,8 @@ export default function SubMenu({ openMenu, onClickSubMenu }: SubMenuProps) {
             <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 py-3">
                 {openMenu && (subMenuItems[openMenu as keyof typeof subMenuItems] as SubMenuItem[])?.map((item) => (
                     <Link
-                        key={item.path}
-                        to={item.path}
+                        key={"/" + openMenu + item.path}
+                        to={"/" + openMenu + item.path}
                         className={getLinkClass(item.path)}
                         onClick={onClickSubMenu}
                     >

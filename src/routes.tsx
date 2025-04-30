@@ -27,14 +27,14 @@ export const router = createBrowserRouter([
                 path: "about",
                 children: [
                     { path:"team", element: <Team/>},
-                    { path:"view", element: <View/>},
+                    { path:"used-features", element: <UsedFeatures/>},
                 ]
             },
             {
                 path: "features",
                 children: [
-                    { path:"used-features", element: <UsedFeatures/>},
                     { path:"system-architecture", element: <SystemArchitecture/>},
+                    { path:"view", element: <View/>},
                 ]
             },
             {

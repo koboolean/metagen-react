@@ -1,13 +1,13 @@
 export const subMenuItems = {
   about: [
-    { label: '팀 소개', path: '/about/team' },
-    { label: '예제 페이지', path: '/about/view' }
+    { label: '팀 소개', path: '/team' },
+    { label: '사용중인 기능', path: '/used-features' },
   ],
   features: [
-    { label: '사용중인 기능', path: '/features/used-features' },
-    { label: '시스템 아키텍처', path: '/features/system-architecture' }
+    { label: '예제 페이지', path: '/view' },
+    { label: '시스템 아키텍처', path: '/system-architecture' }
   ],
   contact: [
-    { label: '이메일 문의', path: '/contact/email' }
+    { label: '이메일 문의', path: '/email' }
   ]
 };
