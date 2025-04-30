@@ -23,7 +23,7 @@ export default function MainMenu({ setOpenMenu }: MainMenuProps) {
                 onMouseEnter={() => setOpenMenu('features')}
                 className="transition-colors cursor-pointer text-white hover:text-gray-200"
             >
-                주요 기능
+                기능
             </div>
             <div
                 onMouseEnter={() => setOpenMenu('docs')}
