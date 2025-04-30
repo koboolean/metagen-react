@@ -6,6 +6,7 @@ import Team from "./about/Team.tsx";
 import View from "./about/View.tsx";
 import SystemArchitecture from "./features/SystemArchitecture.tsx";
 import Email from "./assets/Email.tsx";
+import ServerSetting from "./features/ServerSetting.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
                 children: [
                     { path:"system-architecture", element: <SystemArchitecture/>},
                     { path:"view", element: <View/>},
+                    { path:"server-setting", element: <ServerSetting/>}
                 ]
             },
             {
