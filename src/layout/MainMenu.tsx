@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type MainMenuProps = {
     setOpenMenu: (menu: string) => void;
@@ -8,7 +8,7 @@ export default function MainMenu({ setOpenMenu }: MainMenuProps) {
     return (
         <nav className="flex gap-8 text-base">
             <Link
-                to={"/"}
+                to="/"
                 className="transition-colors cursor-pointer text-white hover:text-gray-200"
             >
                 홈
@@ -23,7 +23,13 @@ export default function MainMenu({ setOpenMenu }: MainMenuProps) {
                 onMouseEnter={() => setOpenMenu('features')}
                 className="transition-colors cursor-pointer text-white hover:text-gray-200"
             >
-                기능
+                주요 기능
+            </div>
+            <div
+                onMouseEnter={() => setOpenMenu('docs')}
+                className="transition-colors cursor-pointer text-white hover:text-gray-200"
+            >
+                문서
             </div>
             <div
                 onMouseEnter={() => setOpenMenu('contact')}
