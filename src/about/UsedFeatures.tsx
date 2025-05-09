@@ -31,8 +31,8 @@ export default function UsedFeatures() {
             <Scroll child={child}/>
 
             <ScrollSub>
-                {/* 기술 스택 */}
                 <Motion id={"tech"}>
+
                     <Title title={"사용중인 기술 및 기능"}/>
 
                     <h2 className="text-2xl font-semibold mb-4">기술 스택</h2>
