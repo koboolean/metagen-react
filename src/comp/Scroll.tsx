@@ -20,7 +20,7 @@ export default function Scroll({child} : Scroll){
                 <h3 className="text-lg font-bold mb-4">목차</h3>
                 <ul className="space-y-2">
                     {child.map(( c : ChildType) => (
-                        <ScrollLinks to={c.to} title={c.title}/>
+                        <ScrollLinks key={c.to} to={c.to} title={c.title}/>
                     ))
                     }
                 </ul>

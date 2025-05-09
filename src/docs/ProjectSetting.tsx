@@ -1,19 +1,13 @@
-import {motion} from "framer-motion";
 import Title from "../comp/Title.tsx";
+import Motion from "../comp/Motion.tsx";
+import MainPage from "../comp/MainPage.tsx";
 
-export default function ProjectSetting(){
+export default function ProjectSetting() {
 
-    return <>
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-16 text-gray-800"
-        >
-            <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10">
-                <Title title={"프로젝트 관리"}/>
+    return <Motion id={"project"}>
+        <MainPage>
+            <Title title={"프로젝트 관리"}/>
 
-            </div>
-        </motion.div>
-    </>
+        </MainPage>
+    </Motion>
 }
