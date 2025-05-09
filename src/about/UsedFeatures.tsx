@@ -1,6 +1,9 @@
-import { motion } from 'framer-motion';
+
 import Title from "../comp/Title.tsx";
 import Scroll from "../comp/Scroll.tsx";
+import ScrollMain from "../comp/ScrollMain.tsx";
+import ScrollSub from "../comp/ScrollSub.tsx";
+import Motion from "../comp/Motion.tsx";
 
 export default function UsedFeatures() {
 
@@ -24,20 +27,12 @@ export default function UsedFeatures() {
     ]
 
     return (
-        <div className="flex max-w-7xl mx-auto px-6 py-12 text-gray-800">
+        <ScrollMain>
             <Scroll child={child}/>
 
-            {/* Main Content */}
-            <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10">
+            <ScrollSub>
                 {/* 기술 스택 */}
-                <motion.section
-                    id="tech"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="mb-20"
-                >
+                <Motion id={"tech"}>
                     <Title title={"사용중인 기술 및 기능"}/>
 
                     <h2 className="text-2xl font-semibold mb-4">기술 스택</h2>
@@ -99,33 +94,20 @@ export default function UsedFeatures() {
                             <li>Springdoc OpenAPI (Swagger) 2.8.5</li>
                         </ul>
                     </div>
-                </motion.section>
+                </Motion>
 
                 {/* 프로젝트 목표 */}
-                <motion.section
-                    id="goal"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="mb-20"
-                >
+                <Motion id={"goal"}>
                     <h2 className="text-2xl font-semibold mb-8">프로젝트 목표</h2>
                     <ul className="list-disc list-inside space-y-2">
                         <li><strong>코드 일관성 향상</strong> - 명명 규칙에 기반한 메소드/함수명 자동 생성</li>
                         <li><strong>문서화 자동화</strong> - 설계서 및 테스트 시나리오 자동 생성</li>
                         <li><strong>개발 생산성 향상</strong> - 템플릿 제공 및 자동화를 통한 반복 작업 감소</li>
                     </ul>
-                </motion.section>
+                </Motion>
 
                 {/* MetaGen 특화 기능 */}
-                <motion.section
-                    id="features"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                >
+                <Motion id={"features"}>
                     <h2 className="text-2xl font-semibold mb-8">MetaGen 특화 기능</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,17 +128,10 @@ export default function UsedFeatures() {
                             </div>
                         ))}
                     </div>
-                </motion.section>
+                </Motion>
 
                 {/* 도입 검토 중 기술 */}
-                <motion.section
-                    id="future"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="mt-20"
-                >
+                <Motion id={"future"}>
                     <h2 className="text-2xl font-semibold mb-8">도입 검토 중 기술</h2>
 
                     <ul className="list-disc list-inside space-y-2">
@@ -164,8 +139,8 @@ export default function UsedFeatures() {
                         <li><strong>Spring Data Elasticsearch 5.2.1</strong> – Elasticsearch 연동 및 데이터 관리</li>
                         <li><strong>Spring Batch 5.2.1</strong> – 대량 데이터 비동기 배치처리 관련 작업 수행</li>
                     </ul>
-                </motion.section>
-            </div>
-        </div>
+                </Motion>
+            </ScrollSub>
+        </ScrollMain>
     );
 }

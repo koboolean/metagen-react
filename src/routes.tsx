@@ -1,7 +1,7 @@
 import {createBrowserRouter, Outlet} from 'react-router-dom';
 import Header from "./layout/Header.tsx";
 import Main from "./main/Main.tsx";
-import UsedFeatures from "./features/UsedFeatures.tsx";
+import UsedFeatures from "./about/UsedFeatures.tsx";
 
 /*import Team from "./about/Team.tsx";
 import View from "./about/View.tsx";*/
