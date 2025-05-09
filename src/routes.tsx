@@ -2,12 +2,18 @@ import {createBrowserRouter, Outlet} from 'react-router-dom';
 import Header from "./layout/Header.tsx";
 import Main from "./main/Main.tsx";
 import UsedFeatures from "./features/UsedFeatures.tsx";
-import Team from "./about/Team.tsx";
-import View from "./about/View.tsx";
+
+/*import Team from "./about/Team.tsx";
+import View from "./about/View.tsx";*/
+
 import SystemArchitecture from "./features/SystemArchitecture.tsx";
 import Email from "./assets/Email.tsx";
-import ServerSetting from "./features/ServerSetting.tsx";
-import AccountSetting from "./features/AccountSetting.tsx";
+import ServerSetting from "./docs/ServerSetting.tsx";
+import AccountSetting from "./docs/AccountSetting.tsx";
+import ProdSetting from "./docs/ProdSetting.tsx";
+import ProjectSetting from "./docs/ProjectSetting.tsx";
+import DataSetting from "./docs/DataSetting.tsx";
+import DesignSetting from "./docs/DesignSetting.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +34,7 @@ export const router = createBrowserRouter([
             {
                 path: "about",
                 children: [
-                    { path:"team", element: <Team/>},
+                    /*{ path:"team", element: <Team/>},*/
                     { path:"used-features", element: <UsedFeatures/>},
                 ]
             },
@@ -36,14 +42,18 @@ export const router = createBrowserRouter([
                 path: "features",
                 children: [
                     { path:"system-architecture", element: <SystemArchitecture/>},
-                    { path:"view", element: <View/>},
+                    /*{ path:"view", element: <View/>},*/
                 ]
             },
             {
                 path: "docs",
                 children: [
                     { path:"server-setting", element: <ServerSetting/>},
-                    { path:"account-setting", element: <AccountSetting/>}
+                    { path:"account-setting", element: <AccountSetting/>},
+                    { path:"prod-setting", element: <ProdSetting/>},
+                    { path:"project-setting", element: <ProjectSetting/>},
+                    { path:"data-setting", element: <DataSetting/>},
+                    { path:"design-setting", element: <DesignSetting/>},
                 ]
             },
             {

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { motion } from 'framer-motion';
+import Title from "../comp/Title.tsx";
 
 export default function SystemArchitecture() {
 
@@ -21,10 +22,7 @@ export default function SystemArchitecture() {
             className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-16 text-gray-800"
         >
         <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10 text-gray-800">
-            {/* 제목 */}
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                시스템 아키텍처
-            </h1>
+            <Title title={"시스템 아키텍처"}/>
 
             {/* 설명 */}
             <p className="text-lg leading-relaxed mb-6">

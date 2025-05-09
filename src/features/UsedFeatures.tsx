@@ -1,40 +1,34 @@
-import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
+import Title from "../comp/Title.tsx";
+import Scroll from "../comp/Scroll.tsx";
 
 export default function UsedFeatures() {
+
+    const child = [
+        {
+            to : "tech",
+            title : "기술 스택"
+        },
+        {
+            to : "goal",
+            title : "프로젝트 목표"
+        },
+        {
+            to : "features",
+            title : "MetaGen 특화 기능"
+        },
+        {
+            to : "future",
+            title : "도입 검토 중"
+        }
+    ]
+
     return (
         <div className="flex max-w-7xl mx-auto px-6 py-12 text-gray-800">
-            {/* Sidebar */}
-            <aside className="hidden lg:block w-60 flex-shrink-0 sticky top-32 self-start">
-                <div className="p-4 bg-white shadow-md rounded-md">
-                    <h3 className="text-lg font-bold mb-4">목차</h3>
-                    <ul className="space-y-2">
-                        <li>
-                            <ScrollLink to="tech" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
-                                기술 스택
-                            </ScrollLink>
-                        </li>
-                        <li>
-                            <ScrollLink to="goal" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
-                                프로젝트 목표
-                            </ScrollLink>
-                        </li>
-                        <li>
-                            <ScrollLink to="features" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
-                                MetaGen 특화 기능
-                            </ScrollLink>
-                        </li>
-                        <li>
-                            <ScrollLink to="future" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">
-                                도입 검토 중
-                            </ScrollLink>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
+            <Scroll child={child}/>
 
             {/* Main Content */}
-            <div className="flex-1 ml-8">
+            <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10">
                 {/* 기술 스택 */}
                 <motion.section
                     id="tech"
@@ -44,7 +38,7 @@ export default function UsedFeatures() {
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <h1 className="text-4xl font-bold mb-10">사용 중인 기술 및 기능</h1>
+                    <Title title={"사용중인 기술 및 기능"}/>
 
                     <h2 className="text-2xl font-semibold mb-4">기술 스택</h2>
 
@@ -166,7 +160,6 @@ export default function UsedFeatures() {
                     <h2 className="text-2xl font-semibold mb-8">도입 검토 중 기술</h2>
 
                     <ul className="list-disc list-inside space-y-2">
-                        <li><strong>Redis Pub/Sub</strong> – 승인관리 시스템 비동기 메시징 처리</li>
                         <li><strong>Elasticsearch 8.11.0</strong> – 대량 데이터 검색 및 실시간 분석</li>
                         <li><strong>Spring Data Elasticsearch 5.2.1</strong> – Elasticsearch 연동 및 데이터 관리</li>
                         <li><strong>Spring Batch 5.2.1</strong> – 대량 데이터 비동기 배치처리 관련 작업 수행</li>

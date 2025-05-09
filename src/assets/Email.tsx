@@ -6,9 +6,10 @@ export default function Email() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto px-6 py-12 text-gray-800"
+            className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-16 text-gray-800"
         >
-            <h1 className="text-3xl font-bold mb-6">이메일 문의</h1>
+            <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">이메일 문의</h1>
 
             <p className="text-lg mb-4 leading-relaxed">
                 MetaGen 프로젝트는 <span className="font-semibold">MIT 라이선스 기반의 Public Repository</span>로 운영되고 있습니다.<br/>
@@ -50,6 +51,7 @@ export default function Email() {
                     GitHub Issues
                 </a>에 등록해주시기 바랍니다.
             </p>
+            </div>
         </motion.div>
     );
 }
