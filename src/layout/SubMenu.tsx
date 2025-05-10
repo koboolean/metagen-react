@@ -21,11 +21,11 @@ export default function SubMenu({ openMenu, onClickSubMenu }: SubMenuProps) {
 
     return (
         <div className="bg-white border-t border-b border-gray-200 w-full">
-            <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 py-3">
-                {openMenu && (subMenuItems[openMenu as keyof typeof subMenuItems] as SubMenuItem[])?.map((item) => (
+            <div className="flex flex-wrap justify-center gap-4 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg text-gray-600">
+                {subMenuItems[openMenu as keyof typeof subMenuItems]?.map((item: SubMenuItem) => (
                     <Link
-                        key={"/" + openMenu + item.path}
-                        to={"/" + openMenu + item.path}
+                        key={item.path}
+                        to={`/${openMenu}${item.path}`}
                         className={getLinkClass(item.path)}
                         onClick={onClickSubMenu}
                     >
