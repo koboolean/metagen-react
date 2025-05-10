@@ -7,7 +7,7 @@ type ScrollMainProps = {
 
 export default function ScrollMain({children} : ScrollMainProps){
 
-    return <div className="flex max-w-7xl mx-auto px-6 text-gray-800">
+    return <div className="flex flex-col lg:flex-row max-w-7xl mx-auto text-gray-800 w-full">
         {children}
     </div>
 }
