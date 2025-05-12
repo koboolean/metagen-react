@@ -191,6 +191,51 @@ http-h2-latest    -> H2 + HTTP`}</code>
                             있습니다.
                         </p>
 
+                        <p className="text-sm text-gray-700">
+                            외부에서 실행 중인 Redis나 PostgreSQL 서버가 있다면, 해당 접속 정보를 환경변수로 전달할 수 있습니다.
+                            <br/>
+                            각 설정은 <span className="font-mono">application.yml</span> 내의 <span className="font-mono">${'{...}'}</span> 형식 변수와 연결됩니다.
+                        </p>
+
+                        <h4 className="text-lg font-semibold mt-4">PostgreSQL만 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e DB_HOST=your-postgres-host \\
+  -e DB_PORT=5432 \\
+  -e DB_NAME=meta-gen \\
+  -e DB_USERNAME=meta-gen \\
+  -e DB_PASSWORD=meta-gen \\
+  koboolean/metagen:http-latest`}/>
+
+                        <h4 className="text-lg font-semibold mt-4">Redis만 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e REDIS_HOST=your-redis-host \\
+  -e REDIS_PORT=6379 \\
+  koboolean/metagen:http-latest`}/>
+
+                        <h4 className="text-lg font-semibold mt-4">PostgreSQL + Redis 모두 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e DB_HOST=your-postgres-host \\
+  -e DB_PORT=5432 \\
+  -e DB_NAME=meta-gen \\
+  -e DB_USERNAME=meta-gen \\
+  -e DB_PASSWORD=meta-gen \\
+  -e REDIS_HOST=your-redis-host \\
+  -e REDIS_PORT=6379 \\
+  koboolean/metagen:http-latest`}/>
+
+                        <p className="text-sm text-gray-600">
+                            💡 필요한 항목만 설정하면 됩니다. 예를 들어 Redis만 외부에 있고 DB는 Docker로 구성되어 있다면, <span className="font-mono">REDIS_HOST</span>만 설정하면 됩니다.
+                        </p>
+
                         <hr className="mb-8 border-t border-gray-200 mt-5"/>
 
                         <h3 className="text-xl font-semibold">H2로 직접 실행하기 (Docker Run)</h3>
@@ -261,6 +306,51 @@ http-h2-latest    -> H2 + HTTP`}</code>
                             합니다.<br/>
                             필요 시 <span className="font-mono">meta-gen-postgres</span> 컨테이너를 함께 실행하거나, 로컬에 설치된 DB를 사용할 수
                             있습니다.
+                        </p>
+
+                        <p className="text-sm text-gray-700">
+                            외부에서 실행 중인 Redis나 PostgreSQL 서버가 있다면, 해당 접속 정보를 환경변수로 전달할 수 있습니다.
+                            <br/>
+                            각 설정은 <span className="font-mono">application.yml</span> 내의 <span className="font-mono">${'{...}'}</span> 형식 변수와 연결됩니다.
+                        </p>
+
+                        <h4 className="text-lg font-semibold mt-4">PostgreSQL만 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e DB_HOST=your-postgres-host \\
+  -e DB_PORT=5432 \\
+  -e DB_NAME=meta-gen \\
+  -e DB_USERNAME=meta-gen \\
+  -e DB_PASSWORD=meta-gen \\
+  koboolean/metagen:http-latest`}/>
+
+                        <h4 className="text-lg font-semibold mt-4">Redis만 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e REDIS_HOST=your-redis-host \\
+  -e REDIS_PORT=6379 \\
+  koboolean/metagen:http-latest`}/>
+
+                        <h4 className="text-lg font-semibold mt-4">PostgreSQL + Redis 모두 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e DB_HOST=your-postgres-host \\
+  -e DB_PORT=5432 \\
+  -e DB_NAME=meta-gen \\
+  -e DB_USERNAME=meta-gen \\
+  -e DB_PASSWORD=meta-gen \\
+  -e REDIS_HOST=your-redis-host \\
+  -e REDIS_PORT=6379 \\
+  koboolean/metagen:http-latest`}/>
+
+                        <p className="text-sm text-gray-600">
+                            💡 필요한 항목만 설정하면 됩니다. 예를 들어 Redis만 외부에 있고 DB는 Docker로 구성되어 있다면, <span className="font-mono">REDIS_HOST</span>만 설정하면 됩니다.
                         </p>
 
                         <hr className="mb-8 border-t border-gray-200 mt-5"/>
@@ -335,6 +425,51 @@ http-h2-latest    -> H2 + HTTP`}</code>
                             필요 시 <span className="font-mono">meta-gen-postgres</span> 컨테이너를 함께 실행하거나, 로컬에 설치된 DB를 사용할 수 있습니다.
                         </p>
 
+                        <p className="text-sm text-gray-700">
+                            외부에서 실행 중인 Redis나 PostgreSQL 서버가 있다면, 해당 접속 정보를 환경변수로 전달할 수 있습니다.
+                            <br/>
+                            각 설정은 <span className="font-mono">application.yml</span> 내의 <span className="font-mono">${'{...}'}</span> 형식 변수와 연결됩니다.
+                        </p>
+
+                        <h4 className="text-lg font-semibold mt-4">PostgreSQL만 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e DB_HOST=your-postgres-host \\
+  -e DB_PORT=5432 \\
+  -e DB_NAME=meta-gen \\
+  -e DB_USERNAME=meta-gen \\
+  -e DB_PASSWORD=meta-gen \\
+  koboolean/metagen:http-latest`}/>
+
+                        <h4 className="text-lg font-semibold mt-4">Redis만 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e REDIS_HOST=your-redis-host \\
+  -e REDIS_PORT=6379 \\
+  koboolean/metagen:http-latest`}/>
+
+                        <h4 className="text-lg font-semibold mt-4">PostgreSQL + Redis 모두 외부에서 사용하는 경우</h4>
+
+                        <CodeCopy text={`docker run -d \\
+  --name meta-gen-app \\
+  -p 9940:9940 \\
+  -e DB_HOST=your-postgres-host \\
+  -e DB_PORT=5432 \\
+  -e DB_NAME=meta-gen \\
+  -e DB_USERNAME=meta-gen \\
+  -e DB_PASSWORD=meta-gen \\
+  -e REDIS_HOST=your-redis-host \\
+  -e REDIS_PORT=6379 \\
+  koboolean/metagen:http-latest`}/>
+
+                        <p className="text-sm text-gray-600">
+                            💡 필요한 항목만 설정하면 됩니다. 예를 들어 Redis만 외부에 있고 DB는 Docker로 구성되어 있다면, <span className="font-mono">REDIS_HOST</span>만 설정하면 됩니다.
+                        </p>
+
                         <hr className="mb-8 border-t border-gray-200 mt-5"/>
 
                         <h3 className="text-xl font-semibold">H2로 직접 실행하기 (Docker Run)</h3>
@@ -361,5 +496,4 @@ http-h2-latest    -> H2 + HTTP`}</code>
             </ScrollSub>
         </ScrollMain>
     )
-        ;
 }
