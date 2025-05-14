@@ -36,11 +36,6 @@ export const router = createBrowserRouter([
                 children: [
                     /*{ path:"team", element: <Team/>},*/
                     { path:"used-features", element: <UsedFeatures/>},
-                ]
-            },
-            {
-                path: "features",
-                children: [
                     { path:"system-architecture", element: <SystemArchitecture/>},
                     /*{ path:"view", element: <View/>},*/
                 ]

@@ -2,10 +2,8 @@ export const subMenuItems = {
     about: [
         /*{ label: '팀 소개', path: '/team' },*/
         {label: '기술 스택', path: '/used-features'},
-    ],
-    features: [
-        /*{ label: '기능 시연', path: '/view' },*/
         {label: '시스템 아키텍처', path: '/system-architecture'}
+        /*{ label: '기능 시연', path: '/view' },*/
     ],
     docs: [
         {label: '서비스 시작', path: '/server-setting'},
