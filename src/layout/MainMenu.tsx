@@ -23,13 +23,6 @@ export default function MainMenu({ setOpenMenu }: MainMenuProps) {
             </div>
             <div
                 className="px-3 py-2 whitespace-nowrap text-black sm:text-white hover:bg-gray-100 sm:hover:bg-transparent cursor-pointer"
-                onMouseEnter={() => setOpenMenu('features')}
-                onClick={() => setOpenMenu('features')}
-            >
-                기능
-            </div>
-            <div
-                className="px-3 py-2 whitespace-nowrap text-black sm:text-white hover:bg-gray-100 sm:hover:bg-transparent cursor-pointer"
                 onMouseEnter={() => setOpenMenu('docs')}
                 onClick={() => setOpenMenu('docs')}
             >
