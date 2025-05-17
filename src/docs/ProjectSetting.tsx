@@ -6,9 +6,9 @@ import Title from "../comp/Title.tsx";
 
 export default function ProjectSetting() {
     const child = [
+        { to: "manage", title: "프로젝트 관리" },
         { to: "register", title: "프로젝트 등록" },
         { to: "manager", title: "관리자 위임" },
-        { to: "manage", title: "프로젝트 관리" },
         { to: "member", title: "멤버 관리" },
     ];
 
@@ -17,6 +17,26 @@ export default function ProjectSetting() {
             <Scroll child={child} />
 
             <ScrollSub>
+                {/* 프로젝트 관리 */}
+                <Motion id="manage">
+                    <Title title="프로젝트 관리" />
+                    <div className="text-gray-700 space-y-6 text-base leading-relaxed">
+
+                        <div className="rounded-lg overflow-hidden shadow border border-gray-200">
+                            <img src="/images/project/project_manage.png" alt="프로젝트 관리 화면 예시" className="w-full object-cover" />
+                        </div>
+
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>상단 <strong>[프로젝트 선택]</strong> 드롭다운에서 특정 프로젝트를 선택해 관리할 수 있습니다.</li>
+                            <li>해당 기능은 <strong>프로젝트 관리자</strong> 권한이 있는 계정만 접근 가능합니다.</li>
+                            <li><strong>[삭제]</strong> 버튼을 통해 프로젝트를 제거할 수 있습니다.</li>
+                            <li className="text-red-600 font-medium">
+                                단, <u>프로젝트가 비활성화 상태일 경우 삭제할 수 없습니다.</u><br/>
+                                삭제를 원할 경우 먼저 <strong>프로젝트를 활성화</strong>한 뒤 다시 시도해 주세요.
+                            </li>
+                        </ul>
+                    </div>
+                </Motion>
 
                 {/* 프로젝트 등록 */}
                 <Motion id="register">
@@ -70,27 +90,6 @@ export default function ProjectSetting() {
                             <li>기본적으로 프로젝트 생성자는 <code>admin</code> 계정입니다.</li>
                             <li>이후 관리자 항목을 변경함으로써 다른 사용자에게 위임이 가능합니다.</li>
                             <li>매니저도 다른 사용자에게 관리자 권한을 넘길 수 있어 유연한 권한 위임이 가능합니다.</li>
-                        </ul>
-                    </div>
-                </Motion>
-
-                {/* 프로젝트 관리 */}
-                <Motion id="manage">
-                    <Title title="프로젝트 관리" />
-                    <div className="text-gray-700 space-y-6 text-base leading-relaxed">
-
-                        <div className="rounded-lg overflow-hidden shadow border border-gray-200">
-                            <img src="/images/project/project_manage.png" alt="프로젝트 관리 화면 예시" className="w-full object-cover" />
-                        </div>
-
-                        <ul className="list-disc pl-6 space-y-2">
-                            <li>상단 <strong>[프로젝트 선택]</strong> 드롭다운에서 특정 프로젝트를 선택해 관리할 수 있습니다.</li>
-                            <li>해당 기능은 <strong>프로젝트 관리자</strong> 권한이 있는 계정만 접근 가능합니다.</li>
-                            <li><strong>[삭제]</strong> 버튼을 통해 프로젝트를 제거할 수 있습니다.</li>
-                            <li className="text-red-600 font-medium">
-                                단, <u>프로젝트가 비활성화 상태일 경우 삭제할 수 없습니다.</u><br/>
-                                삭제를 원할 경우 먼저 <strong>프로젝트를 활성화</strong>한 뒤 다시 시도해 주세요.
-                            </li>
                         </ul>
                     </div>
                 </Motion>
